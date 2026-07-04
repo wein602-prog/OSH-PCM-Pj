@@ -1,0 +1,12 @@
+streamlit
+llama-index
+llama-parse
+llama-index-readers-file
+llama-index-embeddings-gemini
+llama-index-llms-google-genai
+llama-index-embeddings-huggingface
+pypdf
+docx2txt
+google-generativeai
+pillow
+nest_asyncio
