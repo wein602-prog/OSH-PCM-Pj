@@ -2,16 +2,9 @@
 # 0. 解決 Streamlit 與 LlamaIndex 的非同步衝突
 # (這段必須放在最頂端)
 # ==========================================
-import asyncio
 import nest_asyncio
 
-# 強制獲取或建立一個新的事件迴圈，確保後續 AI 套件不會報錯
-try:
-    loop = asyncio.get_running_loop()
-except RuntimeError:
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
-
+# 僅需套用 nest_asyncio，交由 Streamlit 自行管理 event loop
 nest_asyncio.apply()
 
 # ==========================================
