@@ -1,3 +1,12 @@
+import asyncio
+import nest_asyncio
+nest_asyncio.apply()
+
+# 如果依然報錯，可以強制設定一個新的迴圈：
+try:
+    asyncio.get_running_loop()
+except RuntimeError:
+    asyncio.set_event_loop(asyncio.new_event_loop())
 import streamlit as st
 import os
 import glob
