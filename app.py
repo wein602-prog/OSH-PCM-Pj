@@ -1,7 +1,7 @@
 # ==========================================
 # 1. 匯入必要套件與設定
 # ==========================================
-import streamlit as st
+import streamlit as st 
 import os
 import glob
 from PIL import Image
