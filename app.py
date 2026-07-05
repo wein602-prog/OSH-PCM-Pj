@@ -1,20 +1,27 @@
+# ==========================================
+# 1. 匯入必要套件與設定
+# ==========================================
 import streamlit as st
 import os
 import glob
-import nest_asyncio
 from PIL import Image
 import tempfile
 import shutil
+import asyncio
+import nest_asyncio
+
+# 只要這行就好！刪除原本 try...except asyncio.new_event_loop() 的危險寫法
+nest_asyncio.apply()
+
 from llama_index.core import SimpleDirectoryReader, VectorStoreIndex, PromptTemplate, Settings, Document
 import google.generativeai as genai
 from llama_index.llms.google_genai import GoogleGenAI
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_parse import LlamaParse
 
-# 確保非同步設定
-nest_asyncio.apply()
-
-# --- 介面設定 ---
+# ==========================================
+# 2. 介面與 API 初始化設定
+# ==========================================
 st.set_page_config(page_title="PCM 職安衛審查系統", layout="wide")
 st.title("🛡️ PCM 職安衛 / 契約文件審查系統")
 
