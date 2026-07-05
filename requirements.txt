@@ -10,3 +10,5 @@ docx2txt
 google-generativeai
 pillow
 nest_asyncio
+torch
+torchvision
