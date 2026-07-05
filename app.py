@@ -1,7 +1,6 @@
 import asyncio
 import nest_asyncio
 nest_asyncio.apply()
-
 # 如果依然報錯，可以強制設定一個新的迴圈：
 try:
     asyncio.get_running_loop()
